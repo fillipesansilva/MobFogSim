@@ -381,6 +381,7 @@ public class MobileController extends SimEntity {
 						&& distance < MaxAndMin.AP_COVERAGE) {
 						index = Migration.nextAp(getApDevices(), st);
 						if (index >= 0) {// index isn't negative
+							System.out.println("ola: " + index);
 							st.setDestinationAp(getApDevices().get(index));
 							st.setHandoffStatus(true);
 							st.setLockedToHandoff(true);
