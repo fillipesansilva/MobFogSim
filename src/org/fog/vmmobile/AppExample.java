@@ -512,7 +512,8 @@ public class AppExample {
 		Arrays.sort(listOfFiles);
 		int[] ordem = readDevicePathOrder(listOfFiles[listOfFiles.length - 1]);
 		for (int i = 0; i < getSmartThings().size(); i++) {
-			readDevicePath(getSmartThings().get(i), "input/" + listOfFiles[ordem[i]].getName());
+			readDevicePath(getSmartThings().get(i), "input/2416log.csv");
+			//readDevicePath(getSmartThings().get(i), "input/" + listOfFiles[ordem[i]].getName());
 		}
 	}
 
