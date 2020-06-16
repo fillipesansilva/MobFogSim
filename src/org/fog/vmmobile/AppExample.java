@@ -144,7 +144,7 @@ public class AppExample {
 		 *  Ninth parameter: Non Negative Integer -> User Mobility prediction inaccuracy, in meters
 		 *  Tenth parameter: Positive negative Integer -> Base Network Latency between cloudlets
 		 */
-		System.setOut(new PrintStream("out.txt"));
+
 		Log.disable();
 
 		int numUser = 1; // number of cloud users
@@ -497,7 +497,7 @@ public class AppExample {
 				+ ap.getServerCloudlet().getName());
 
 		}
-		//System.setOut(new PrintStream("out.txt"));
+		System.setOut(new PrintStream("out.txt"));
 		System.out.println("Inicio: " + Calendar.getInstance().getTime());
 		CloudSim.startSimulation();
 		System.out.println("Simulation over");
@@ -512,8 +512,7 @@ public class AppExample {
 		Arrays.sort(listOfFiles);
 		int[] ordem = readDevicePathOrder(listOfFiles[listOfFiles.length - 1]);
 		for (int i = 0; i < getSmartThings().size(); i++) {
-			readDevicePath(getSmartThings().get(i), "input/2416log.csv");
-			//readDevicePath(getSmartThings().get(i), "input/" + listOfFiles[ordem[i]].getName());
+			readDevicePath(getSmartThings().get(i), "input/" + listOfFiles[ordem[i]].getName());
 		}
 	}
 

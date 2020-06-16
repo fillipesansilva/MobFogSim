@@ -381,7 +381,6 @@ public class MobileController extends SimEntity {
 						&& distance < MaxAndMin.AP_COVERAGE) {
 						index = Migration.nextAp(getApDevices(), st);
 						if (index >= 0) {// index isn't negative
-							System.out.println("ola: " + index);
 							st.setDestinationAp(getApDevices().get(index));
 							st.setHandoffStatus(true);
 							st.setLockedToHandoff(true);
@@ -580,7 +579,7 @@ public class MobileController extends SimEntity {
 		printResults(String.valueOf(energyConsumedMean / j), "averageEnergyHistoryDevice.txt");
 		printResults(
 			String.valueOf(energyConsumedMean) + "\t" + String.valueOf(energyConsumedMean / j),
-			"resultados.txt");
+			"results.txt");
 		energyConsumedMean = 0.0;
 		System.out.println("=========================================");
 		System.out.println("AP DEVICES ENERGY CONSUMPTION");
@@ -611,7 +610,7 @@ public class MobileController extends SimEntity {
 			System.out.println("SmartThing" + i + ": Energy Consumed = "
 				+ MyStatistics.getInstance().getEnergyHistory().get(i));
 			printResults(String.valueOf(MyStatistics.getInstance().getEnergyHistory().get(i)),
-				"resultados.txt");
+				"results.txt");
 			energyConsumedMean += MyStatistics.getInstance().getEnergyHistory().get(i);
 		}
 	}
@@ -647,10 +646,10 @@ public class MobileController extends SimEntity {
 				+ TimeKeeper.getInstance().getMaxLoopExecutionTime().get(loopId));
 			printResults(
 				String.valueOf(TimeKeeper.getInstance().getLoopIdToCurrentAverage().get(loopId)),
-				"resultados.txt");
+				"results.txt");
 			printResults(
 				String.valueOf(TimeKeeper.getInstance().getMaxLoopExecutionTime().get(loopId)),
-				"resultados.txt");
+				"results.txt");
 			mediaLatencia += TimeKeeper.getInstance().getLoopIdToCurrentAverage().get(loopId);
 			mediaLatenciaMax += TimeKeeper.getInstance().getMaxLoopExecutionTime().get(loopId);
 		}
@@ -685,7 +684,7 @@ public class MobileController extends SimEntity {
 		printResults(
 			String.valueOf(NetworkUsageMonitor.getVMTransferredData() / CloudSim.clock()) + '\t'
 				+ String.valueOf(NetworkUsageMonitor.getVMTransferredData()) + '\t'
-				+ CloudSim.clock(), "resultados.txt");
+				+ CloudSim.clock(), "results.txt");
 		printResults(
 			String.valueOf(NetworkUsageMonitor.getVMTransferredData() / CloudSim.clock()) + '\t'
 				+ String.valueOf(NetworkUsageMonitor.getVMTransferredData()) + '\t'
@@ -693,7 +692,7 @@ public class MobileController extends SimEntity {
 		System.out.println("Device's network usage = " + deviceNetworkUsage);
 		printResults(
 			String.valueOf(deviceNetworkUsage / CloudSim.clock()) + '\t'
-				+ String.valueOf(deviceNetworkUsage) + '\t' + CloudSim.clock(), "resultados.txt");
+				+ String.valueOf(deviceNetworkUsage) + '\t' + CloudSim.clock(), "results.txt");
 		printResults(
 			String.valueOf(deviceNetworkUsage / CloudSim.clock()) + '\t'
 				+ String.valueOf(deviceNetworkUsage) + '\t' + CloudSim.clock(),
@@ -706,7 +705,7 @@ public class MobileController extends SimEntity {
 		printResults(
 			String.valueOf(NetworkUsageMonitor.getNetWorkUsageInMigration() / CloudSim.clock())
 				+ '\t' + String.valueOf(NetworkUsageMonitor.getNetWorkUsageInMigration()) + '\t'
-				+ CloudSim.clock(), "resultados.txt");
+				+ CloudSim.clock(), "results.txt");
 		printResults(
 			String.valueOf(NetworkUsageMonitor.getNetWorkUsageInMigration() / CloudSim.clock())
 				+ '\t' + String.valueOf(NetworkUsageMonitor.getNetWorkUsageInMigration()) + '\t'
@@ -715,7 +714,7 @@ public class MobileController extends SimEntity {
 		printResults(
 			String.valueOf(NetworkUsageMonitor.getNetworkUsage() / CloudSim.clock()) + '\t'
 				+ String.valueOf(NetworkUsageMonitor.getNetworkUsage()) + '\t' + CloudSim.clock(),
-			"resultados.txt");
+			"results.txt");
 		printResults(
 			String.valueOf(NetworkUsageMonitor.getNetworkUsage() / CloudSim.clock()) + '\t'
 				+ String.valueOf(NetworkUsageMonitor.getNetworkUsage()) + '\t' + CloudSim.clock(),
@@ -729,12 +728,12 @@ public class MobileController extends SimEntity {
 		System.out.println("Total of migrations: "
 			+ MyStatistics.getInstance().getTotalMigrations());
 		System.out.println("Total of handoff: " + MyStatistics.getInstance().getTotalHandoff());
-		System.out.println("Total of migration to differents SC: "
+		System.out.println("Different Cloudlets reached along the user's path: "
 			+ MyStatistics.getInstance().getMyCountLowestLatency());
 
 		printResults(String.valueOf(MyStatistics.getInstance().getTotalMigrations()),
-			"resultados.txt");
-		printResults(String.valueOf(MyStatistics.getInstance().getTotalHandoff()), "resultados.txt");
+			"results.txt");
+		printResults(String.valueOf(MyStatistics.getInstance().getTotalHandoff()), "results.txt");
 
 		printResults(String.valueOf(MyStatistics.getInstance().getTotalMigrations()),
 			"totalMigrations.txt");
@@ -758,7 +757,7 @@ public class MobileController extends SimEntity {
 			+ MyStatistics.getInstance().getAverageWithoutConnection());
 
 		printResults(String.valueOf(MyStatistics.getInstance().getAverageWithoutConnection()),
-			"resultados.txt");
+			"results.txt");
 
 		System.out.println("***Last time without Vm***");
 
@@ -771,7 +770,7 @@ public class MobileController extends SimEntity {
 		System.out.println("Average of without Vm: "
 			+ MyStatistics.getInstance().getAverageWithoutVmTime());
 		printResults(String.valueOf(MyStatistics.getInstance().getAverageWithoutVmTime()),
-			"resultados.txt");
+			"results.txt");
 		printResults(String.valueOf(MyStatistics.getInstance().getAverageWithoutVmTime()),
 			"averageWithoutVmTime.txt");
 
@@ -787,7 +786,7 @@ public class MobileController extends SimEntity {
 			+ MyStatistics.getInstance().getAverageDelayAfterNewConnection());
 		printResults(
 			String.valueOf(MyStatistics.getInstance().getAverageDelayAfterNewConnection()),
-			"resultados.txt");
+			"results.txt");
 		printResults(
 			String.valueOf(MyStatistics.getInstance().getAverageDelayAfterNewConnection()),
 			"averageDelayAfterNewConnection.txt");
@@ -804,7 +803,7 @@ public class MobileController extends SimEntity {
 		System.out.println("Average of Time of Migrations: "
 			+ MyStatistics.getInstance().getAverageMigrationTime());
 		printResults(String.valueOf(MyStatistics.getInstance().getAverageMigrationTime()),
-			"resultados.txt");
+			"results.txt");
 		printResults(String.valueOf(MyStatistics.getInstance().getAverageMigrationTime()),
 			"averageMigrationTime.txt");
 		System.out.println("Hightest Time of Migrations: " + tempoMigracaoMax);
@@ -820,7 +819,7 @@ public class MobileController extends SimEntity {
 		System.out.println("Average of Downtime: "
 			+ MyStatistics.getInstance().getAverageDowntime());
 		printResults(String.valueOf(MyStatistics.getInstance().getAverageDowntime()),
-			"resultados.txt");
+			"results.txt");
 		printResults(String.valueOf(MyStatistics.getInstance().getAverageDowntime()),
 			"averageDowntime.txt");
 		System.out.println("Max Downtime: " + tempoDowntimeMax);

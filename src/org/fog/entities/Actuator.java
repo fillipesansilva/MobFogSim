@@ -101,7 +101,6 @@ public class Actuator extends SimEntity {
 					break;
 				if (!TimeKeeper.getInstance().getLoopIdToCurrentAverage()
 					.containsKey(loop.getLoopId())) {
-					System.out.println("Entrou no Actuador: " + loop.getLoopId());
 					TimeKeeper.getInstance().getLoopIdToCurrentAverage().put(loop.getLoopId(), 0.0);
 					TimeKeeper.getInstance().getLoopIdToCurrentNum().put(loop.getLoopId(), 0);
 					TimeKeeper.getInstance().getMaxLoopExecutionTime().put(loop.getLoopId(), 0.0);
