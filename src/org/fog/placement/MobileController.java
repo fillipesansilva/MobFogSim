@@ -353,11 +353,15 @@ public class MobileController extends SimEntity {
 	}
 
 	private void checkNewStep() {
+		
 		int index = 0;
 		for (MobileDevice st : getSmartThings()) {
 			if (st.getTravelTimeId() == -1) {
 				continue;
 			}
+			
+			System.out.println("isLockedToMigration: " + st.isLockedToMigration());
+			
 			MyStatistics.getInstance().getEnergyHistory()
 				.put(st.getMyId(), st.getEnergyConsumption());
 			MyStatistics.getInstance().getPowerHistory().put(st.getMyId(), st.getHost().getPower());
