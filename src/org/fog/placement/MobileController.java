@@ -393,7 +393,7 @@ public class MobileController extends SimEntity {
 
 							if (!st.getDestinationAp().getServerCloudlet()
 								.equals(st.getSourceServerCloudlet())) {
-
+								System.out.println(isMigrationAble());
 								if (isMigrationAble()) {
 									LogMobile.debug("MobileController.java", st.getName()
 										+ " will be desconnected from " +

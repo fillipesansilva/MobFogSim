@@ -50,7 +50,7 @@ public class CompleteVM implements VmMigrationTechnique {
 				+ smartThing.getVmMobileDevice().getSize() + " bandwidth: " + bandwidth
 				+ " tempo " + migrationTimeFunction(smartThing.getVmMobileDevice().getSize(), bandwidth)
 				+ " cloudlet uplink latency " + smartThing.getVmLocalServerCloudlet().getUplinkLatency()
-				+ " delay st cloudlet " + NetworkTopology.getDelay(smartThing.getId(), smartThing
+				+ " delay st <-> cloudlet " + NetworkTopology.getDelay(smartThing.getId(), smartThing
 					.getVmLocalServerCloudlet().getId())
 				+ " latency distance cloud st "
 				+ LatencyByDistance.latencyConnection(smartThing.getVmLocalServerCloudlet(),
